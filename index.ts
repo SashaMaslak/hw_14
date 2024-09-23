@@ -7,8 +7,6 @@ interface Note {
   createdAt: Date
   updatedAt: Date
   status: Status
-
-  // Додамо методи, які є у класах
   edit(title: string, content: string): void
   complete(): void
 }
@@ -130,31 +128,3 @@ class TodoList {
     )
   }
 }
-
-// Використання:
-const todoList = new TodoList()
-
-// Додаємо нотатки
-todoList.addNote("Buy groceries", "Buy milk, eggs, and bread.")
-todoList.addNote("Walk the dog", "Take the dog for a walk in the park.", true)
-
-// Отримуємо всі нотатки
-console.log(todoList.getAllNotes())
-
-// Редагуємо нотатку
-todoList.editNote(1, "Buy groceries", "Buy milk, eggs, bread, and bananas.")
-
-// Позначаємо як виконану
-todoList.completeNote(1)
-
-// Сортуємо нотатки за статусом
-console.log(todoList.sortNotesByStatus())
-
-// Сортуємо за часом створення
-console.log(todoList.sortNotesByCreationTime())
-
-// Пошук нотатки за ім'ям або змістом
-console.log(todoList.searchNotes("dog"))
-
-// Отримуємо кількість невиконаних нотаток
-console.log(todoList.getPendingNotesCount())
